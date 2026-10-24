@@ -35,3 +35,8 @@ jobs:
           codesign --verify --deep --strict "$app"
           spctl --assess --type execute --verbose=2 "$app"
           xcrun stapler validate "$app"
+      - name: Verify public update feed from GitHub's Mac
+        run: |
+          curl --fail --silent --show-error --connect-timeout 10 --max-time 30 \
+            https://pet.miel.ing/update/production/latest.json -o "$RUNNER_TEMP/update-feed.json"
+          python3 -c 'import json, sys; data=json.load(open(sys.argv[1])); print("External update feed:", data["version"], data["build"], data["sha256"])' "$RUNNER_TEMP/update-feed.json"
