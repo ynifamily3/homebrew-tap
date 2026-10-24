@@ -1,0 +1,37 @@
+name: Cask
+
+on:
+  push:
+    branches: [main]
+    paths: ['Casks/**', '.github/workflows/cask.yml']
+  pull_request:
+    paths: ['Casks/**', '.github/workflows/cask.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: macos-15
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: '1'
+      HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Tap this checkout
+        run: |
+          brew tap ynifamily3/tap "$GITHUB_WORKSPACE"
+          brew trust --cask ynifamily3/tap/typing-pet
+      - name: Check cask style
+        run: brew style --cask ynifamily3/tap/typing-pet
+      - name: Audit published artifact
+        run: brew audit --cask --strict --online ynifamily3/tap/typing-pet
+      - name: Install and verify
+        run: |
+          mkdir -p "$RUNNER_TEMP/TypingPetApps"
+          brew install --cask --appdir="$RUNNER_TEMP/TypingPetApps" ynifamily3/tap/typing-pet
+          app="$RUNNER_TEMP/TypingPetApps/TypingPet.app"
+          codesign --verify --deep --strict "$app"
+          spctl --assess --type execute --verbose=2 "$app"
+          xcrun stapler validate "$app"
