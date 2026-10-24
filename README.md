@@ -41,3 +41,7 @@ Cask versions and SHA-256 checksums are published by the app repository's guarde
 
 It verifies the public GitHub ZIP against the prepared signed release before updating this tap.
 See [release automation](https://github.com/ynifamily3/TypingPetMac/blob/main/docs/RELEASE.md).
+
+The tap intentionally follows public prereleases. CI excludes only Homebrew's
+`github_prerelease_version` policy check; artifact checks, SHA-256, code signing,
+notarization, and a real installation remain required.

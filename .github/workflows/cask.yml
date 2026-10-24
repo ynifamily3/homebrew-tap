@@ -26,7 +26,7 @@ jobs:
       - name: Check cask style
         run: brew style --cask ynifamily3/tap/typing-pet
       - name: Audit published artifact
-        run: brew audit --cask --strict --online ynifamily3/tap/typing-pet
+        run: brew audit --cask --strict --online --except=github_prerelease_version ynifamily3/tap/typing-pet
       - name: Install and verify
         run: |
           mkdir -p "$RUNNER_TEMP/TypingPetApps"
