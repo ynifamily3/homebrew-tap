@@ -1,6 +1,6 @@
 cask "typing-pet" do
-  version "0.18.0"
-  sha256 "50d661a8d0af28c4e8a294420cabe376523400ef96c08e51bbd7309e9b2e2431"
+  version "0.18.1"
+  sha256 "6a7708af268c6d6daf08fe34d808d9866e58e3bbba499fc4795fc1347e6fd6ca"
 
   url "https://github.com/ynifamily3/TypingPetMac/releases/download/v#{version}/TypingPetMac-v#{version}-arm64.zip"
   name "Typing Pet"
