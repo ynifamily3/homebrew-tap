@@ -14,12 +14,9 @@ cask "nekocal" do
 
   app "KawaiiCal.app"
 
-  # rubocop:disable Cask/InstallSteps -- Homebrew has no macOS 27 dependency symbol yet.
   preflight do
     odie "nekocal requires macOS 27 or later." if MacOS.version < "27"
   end
-
-  # rubocop:enable Cask/InstallSteps
 
   caveats <<~EOS
     The project and package are named nekocal; the installed app is currently KawaiiCal.
