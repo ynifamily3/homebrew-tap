@@ -1,5 +1,19 @@
 # Homebrew tap by ynifamily3
 
+## nekocal
+
+A cat-themed macOS menu bar calendar based on Itsycal, with Korean localization and emoji rotation.
+Requires Apple Silicon and macOS 27 or later. Signed with Developer ID and notarized by Apple.
+
+```sh
+brew install --cask ynifamily3/tap/nekocal
+```
+
+The installed app is currently named **KawaiiCal**. Open it from Applications and allow Calendar access.
+To update, run `brew update` followed by `brew upgrade --cask ynifamily3/tap/nekocal`.
+
+Source, releases, and installation help: [nekocal](https://github.com/ynifamily3/nekocal).
+
 ## Typing Pet for macOS
 
 A desktop pet that reacts to keystrokes. Supports Apple Silicon Macs running macOS 13 or later.
