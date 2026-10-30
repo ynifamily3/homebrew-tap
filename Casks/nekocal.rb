@@ -19,6 +19,7 @@ cask "nekocal" do
   end
 
   caveats <<~EOS
+    Requires Apple Silicon and macOS 27 or later.
     The project and package are named nekocal; the installed app is currently KawaiiCal.
     Open KawaiiCal from Applications and allow Calendar access when prompted.
   EOS

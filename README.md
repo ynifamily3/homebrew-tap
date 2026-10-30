@@ -9,6 +9,8 @@ Requires Apple Silicon and macOS 27 or later. Signed with Developer ID and notar
 brew install --cask ynifamily3/tap/nekocal
 ```
 
+If Homebrew refuses an untrusted tap, run `brew trust --cask ynifamily3/tap/nekocal` and retry.
+
 The installed app is currently named **KawaiiCal**. Open it from Applications and allow Calendar access.
 To update, run `brew update` followed by `brew upgrade --cask ynifamily3/tap/nekocal`.
 
