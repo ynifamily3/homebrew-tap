@@ -1,5 +1,20 @@
 # Homebrew tap by ynifamily3
 
+## Mini Macro
+
+A native mouse macro recorder with a visual automation editor and image IF branching.
+Requires macOS 14 or later on Apple Silicon or Intel. The Universal app and DMG are signed with Developer ID and notarized by Apple.
+
+```sh
+brew install --cask ynifamily3/tap/mini-macro
+```
+
+If Homebrew refuses an untrusted tap, run `brew trust --cask ynifamily3/tap/mini-macro` and retry.
+The installed app is named **Mouse Macro**. Allow Input Monitoring and Accessibility before playback;
+image IF nodes also require Screen Recording permission.
+
+Source, releases, and installation help: [mini-macro](https://github.com/ynifamily3/mini-macro).
+
 ## nekocal
 
 A cat-themed macOS menu bar calendar based on Itsycal, with Korean localization and emoji rotation.
