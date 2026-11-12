@@ -8,15 +8,9 @@ cask "nekocal" do
   homepage "https://github.com/ynifamily3/nekocal"
 
   depends_on arch: :arm64
-  # Homebrew currently recognizes macOS releases only through Tahoe.
-  # Enforce the app's actual macOS 27 minimum in preflight below.
-  depends_on macos: :tahoe
+  depends_on macos: :golden_gate
 
   app "KawaiiCal.app"
-
-  preflight do
-    odie "nekocal requires macOS 27 or later." if MacOS.version < "27"
-  end
 
   caveats <<~EOS
     Requires Apple Silicon and macOS 27 or later.
