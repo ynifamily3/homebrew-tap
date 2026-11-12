@@ -1,6 +1,6 @@
 cask "nekocal" do
-  version "0.1.0"
-  sha256 "49e691c977cc85b2012bb4099e1d186358f9e4188597b4e05951009d6b3b5a10"
+  version "0.1.1"
+  sha256 "c33d10e05695deef872bffdc3509c2e9412951391cc5eb9a9f50b3487954beb8"
 
   url "https://github.com/ynifamily3/nekocal/releases/download/v#{version}/KawaiiCal-#{version}-arm64.zip"
   name "nekocal"
